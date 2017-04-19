@@ -1,3 +1,15 @@
-<h1>
-  {{title}}
-</h1>
+<!-- <h1> -->
+  <!-- {{title}} -->
+<!-- </h1>
+<div *ngIf="title;then logout else login">
+    The user is logged in.
+</div>
+<ng-template #login>Please login to continue.<button (click)="login()">Login</button></ng-template>
+<ng-template #logout>Hi Ari, <button (click)="logout()">Logout now</button>.</ng-template> -->
+
+<div class="row coloumns">
+<button (click)="login()">Anonymous Login</button>
+<input type="text" id="message" *ngIf="name" placeholder="What is it that you?" (keyup.enter)="Send($event.target.value)" [(ngModel)]="msgVal" name="message">
+<div id="details-container">
+	<p *ngFor="let item of items | async">{{item.message}}</p>
+</div>
